@@ -1,0 +1,35 @@
+.card_image{
+    width: 200px;
+    height: 300px;
+   padding: 1rem;
+   
+}
+.card_image_container{
+    display: flex;
+    justify-content: center;
+}
+.card_container{
+    border: 2px solid black;
+    width: 100%;
+    text-align: center;
+}
+.card_description{
+    margin-top: 5rem;
+}
+.buy_btn{
+    display: none;
+    margin-top: 2rem;
+    margin-bottom: 1rem;
+   
+}
+.card_container:hover .card_description{
+    margin-top: 1rem;
+}
+.card_container:hover .buy_btn{
+    display: block;
+   
+  
+}
+button{
+    cursor: pointer;
+}
