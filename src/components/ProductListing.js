@@ -2,20 +2,21 @@ import React, { useEffect, useState } from 'react'
 import bag from "./bag.jpg"
 import style from "./ProductListing.module.css"
 import ProductCard from './ProductCard';
+import { Link } from 'react-router-dom';
 function ProductListing() {
     const [storeData, setStoreData]=useState()
-    let data;
+   
     useEffect(()=>{
         
         fetch("https://fakestoreapi.com/products")
   .then((res) => res.json())
-  .then((json) =>{ data=json
+  .then((json) =>{ 
     setStoreData(json)
 });
 
     },[])
-console.log(data)
-console.log(!storeData)
+
+console.log(storeData)
 return (
 storeData?<>
     <div>
@@ -27,7 +28,7 @@ storeData?<>
         <div className={style.product_list_container}>
         {storeData.map((data)=>{
             return <div className={style.product_list_child} key={data.id}> 
-            <ProductCard storeData={data}/>
+          <Link to={`product/detail/${data.id}`}> <ProductCard storeData={data}/></Link> 
             </div>
         })}
         </div>
